@@ -3,36 +3,79 @@
 namespace AssigmenOOP02
 {
     #region Q1: struct Person
-    
-    struct Person
-    {
-        public string Name;
-        public int Age;
-        public Person(string name, int age)
-        {
-            Name = name;
-            Age = age;
+
+    //struct Person
+    //{
+    //    public string Name;
+    //    public int Age;
+    //    public Person(string name, int age)
+    //    {
+    //        Name = name;
+    //        Age = age;
+    //    }
+    //} 
+    #endregion
+
+
+    #region Q2:
+    struct Point 
+    { 
+        public double X;
+        public double Y;
+        public Point(double x, double y) 
+        { 
+            X = x; Y = y; 
         }
-    } 
+
+       
+    }
     #endregion
 
     internal class Program
     {
+
+        static double CalculateDistance(Point p1, Point p2)
+        {
+            double dx = p2.X - p1.X;
+            double dy = p2.Y - p1.Y;
+            return Math.Sqrt(dx * dx + dy * dy);
+        }
         static void Main(string[] args)
         {
             #region Q1:Define a struct "Person" with properties "Name" and "Age". Create an array of three "Person" objects and populate it with data. Then, write a C# program to display the details of all the persons in the array.
 
-            Person[] p = new Person[3];
-            p[0] = new Person("Ali", 20); 
-            p[1] = new Person("Ahmed", 22);
-            p[2] = new Person("Mariam", 25);
+            //Person[] p = new Person[3];
+            //p[0] = new Person("Ali", 20); 
+            //p[1] = new Person("Ahmed", 22);
+            //p[2] = new Person("Mariam", 25);
 
-            foreach (Person person in p) 
-            { 
-                Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
-            }
+            //foreach (Person person in p) 
+            //{ 
+            //    Console.WriteLine($"Name: {person.Name} , Age: {person.Age}");
+            //}
 
             #endregion
+
+
+            #region Q2:Create a struct called "Point" to represent a 2D point with properties "X" and "Y". Write a C# program that takes two points as input from the user and calculates the distance between them.
+
+            Console.WriteLine("Enter first point :");
+
+            string[] input1 = Console.ReadLine().Split(' ');
+            Point point1 = new Point(double.Parse(input1[0]), double.Parse(input1[0]));
+
+
+            Console.WriteLine("Enter second point :");
+
+            string[] input2 = Console.ReadLine().Split(' ');
+            Point point2 = new Point(double.Parse(input2[0]), double.Parse(input2[0]));
+
+            double distance =CalculateDistance(point1, point2); 
+            Console.WriteLine($"The distance between the two points is: {distance}");
         }
+        
+        #endregion
+
+
     }
 }
