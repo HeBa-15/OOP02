@@ -20,7 +20,7 @@ namespace OOP02
             #endregion
 
 
-            #region PhoneBook
+            #region Indexer
             PhoneBook note = new PhoneBook(10);
             note.AddPerson(0, "Ahmed", 111);
             note.AddPerson(1, "Nadia", 222);
@@ -34,6 +34,22 @@ namespace OOP02
                 Console.WriteLine(note[i]);
             }
             Console.WriteLine(note.ToString());
+            #endregion
+
+            #region Class
+
+            Car C1;
+            // Declare for Reference of type "Car"
+            // this Reference 'C1' can Refer an object of type "Car" or of another type "Inheriting from Car"
+            // or another type
+            // CLR will allocate Uninitialized bytes in stack for the Reference
+            // CLR will allocates 0 bytes in heap
+
+            C1 = new Car(10102, "Nissan Sentra 2025", 180);
+
+            C1 = new Car(3333, "KIA");
+
+            Console.WriteLine(C1);
             #endregion
 
 
