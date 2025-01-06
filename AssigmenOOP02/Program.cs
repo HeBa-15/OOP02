@@ -2,44 +2,48 @@
 
 namespace AssigmenOOP02
 {
-    #region Q1: struct Person
+    #region Q1 and Q3: struct Person
 
-    //struct Person
-    //{
-    //    public string Name;
-    //    public int Age;
-    //    public Person(string name, int age)
-    //    {
-    //        Name = name;
-    //        Age = age;
-    //    }
-    //} 
+    struct Person
+    {
+        public string Name;
+        public int Age;
+        public Person(string name, int age)
+        {
+            Name = name;
+            Age = age;
+        }
+    }
     #endregion
 
 
     #region Q2:
-    struct Point 
-    { 
-        public double X;
-        public double Y;
-        public Point(double x, double y) 
-        { 
-            X = x; Y = y; 
-        }
+    //struct Point 
+    //{ 
+    //    public double X;
+    //    public double Y;
+    //    public Point(double x, double y) 
+    //    { 
+    //        X = x;
+    //        Y = y; 
+    //    }
 
-       
-    }
+
+    //}
     #endregion
 
     internal class Program
     {
 
-        static double CalculateDistance(Point p1, Point p2)
-        {
-            double dx = p2.X - p1.X;
-            double dy = p2.Y - p1.Y;
-            return Math.Sqrt(dx * dx + dy * dy);
-        }
+        #region Q2:Method
+        //static double CalcDistance(Point p1, Point p2)
+        //{
+        //    double dx = p2.X - p1.X;
+        //    double dy = p2.Y - p1.Y;
+        //    return Math.Sqrt(dx * dx + dy * dy);
+        //}
+        #endregion
+
         static void Main(string[] args)
         {
             #region Q1:Define a struct "Person" with properties "Name" and "Age". Create an array of three "Person" objects and populate it with data. Then, write a C# program to display the details of all the persons in the array.
@@ -59,22 +63,53 @@ namespace AssigmenOOP02
 
             #region Q2:Create a struct called "Point" to represent a 2D point with properties "X" and "Y". Write a C# program that takes two points as input from the user and calculates the distance between them.
 
-            Console.WriteLine("Enter first point :");
+            //    Console.WriteLine("Enter first point :");
 
-            string[] input1 = Console.ReadLine().Split(' ');
-            Point point1 = new Point(double.Parse(input1[0]), double.Parse(input1[0]));
+            //    string[] input1 = Console.ReadLine().Split(' ');
+            //    Point point1 = new Point(double.Parse(input1[0]), double.Parse(input1[0]));
 
 
-            Console.WriteLine("Enter second point :");
+            //    Console.WriteLine("Enter second point :");
 
-            string[] input2 = Console.ReadLine().Split(' ');
-            Point point2 = new Point(double.Parse(input2[0]), double.Parse(input2[0]));
+            //    string[] input2 = Console.ReadLine().Split(' ');
+            //    Point point2 = new Point(double.Parse(input2[0]), double.Parse(input2[0]));
 
-            double distance =CalculateDistance(point1, point2); 
-            Console.WriteLine($"The distance between the two points is: {distance}");
+            //    double distance = CalcDistance(point1, point2); 
+            //    Console.WriteLine($"The distance between the two points is: {distance}");
+            //}
+
+            #endregion
+
+
+            #region Q3:Create a struct called "Person" with properties "Name" and "Age". Write a C# program that takes details of 3 persons as input from the user and displays the name and age of the oldest person.
+
+            Person[] people = new Person[3];
+
+            for (int i = 0; i < people.Length; i++)
+            {
+                Console.WriteLine($"Enter name of person {i + 1}:");
+                string name = Console.ReadLine();
+
+                Console.WriteLine($"Enter  age of person {i + 1}:");
+                int age = int.Parse(Console.ReadLine());
+
+                people[i] = new Person(name, age);
+            }
+            Person oldPerson = people[0];
+
+            foreach (Person person in people)
+            {
+                if (person.Age > oldPerson.Age)
+                {
+                    oldPerson = person;
+                }
+          
+            }
+            Console.WriteLine($"The old person is {oldPerson.Name} with an age of {oldPerson.Age}.");
+            #endregion
+
         }
-        
-        #endregion
+
 
 
     }
