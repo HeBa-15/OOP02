@@ -2,18 +2,20 @@
 
 namespace AssigmenOOP02
 {
+    #region Part01
+
     #region Q1 and Q3: struct Person
 
-    struct Person
-    {
-        public string Name;
-        public int Age;
-        public Person(string name, int age)
-        {
-            Name = name;
-            Age = age;
-        }
-    }
+    //struct Person
+    //{
+    //    public string Name;
+    //    public int Age;
+    //    public Person(string name, int age)
+    //    {
+    //        Name = name;
+    //        Age = age;
+    //    }
+    //}
     #endregion
 
 
@@ -32,6 +34,20 @@ namespace AssigmenOOP02
     //}
     #endregion
 
+    #endregion
+
+    #region Q1
+    public enum SecurityLevel
+    {
+        Guest, Developer, Secretary, DBA
+    }
+    public enum Gender
+    {
+        M, F
+    }
+
+    #endregion
+
     internal class Program
     {
 
@@ -46,6 +62,8 @@ namespace AssigmenOOP02
 
         static void Main(string[] args)
         {
+            #region Part 01
+
             #region Q1:Define a struct "Person" with properties "Name" and "Age". Create an array of three "Person" objects and populate it with data. Then, write a C# program to display the details of all the persons in the array.
 
             //Person[] p = new Person[3];
@@ -83,34 +101,65 @@ namespace AssigmenOOP02
 
             #region Q3:Create a struct called "Person" with properties "Name" and "Age". Write a C# program that takes details of 3 persons as input from the user and displays the name and age of the oldest person.
 
-            Person[] people = new Person[3];
+            //Person[] people = new Person[3];
 
-            for (int i = 0; i < people.Length; i++)
-            {
-                Console.WriteLine($"Enter name of person {i + 1}:");
-                string name = Console.ReadLine();
+            //for (int i = 0; i < people.Length; i++)
+            //{
+            //    Console.WriteLine($"Enter name of person {i + 1}:");
+            //    string name = Console.ReadLine();
 
-                Console.WriteLine($"Enter  age of person {i + 1}:");
-                int age = int.Parse(Console.ReadLine());
+            //    Console.WriteLine($"Enter  age of person {i + 1}:");
+            //    int age = int.Parse(Console.ReadLine());
 
-                people[i] = new Person(name, age);
-            }
-            Person oldPerson = people[0];
+            //    people[i] = new Person(name, age);
+            //}
+            //Person oldPerson = people[0];
 
-            foreach (Person person in people)
-            {
-                if (person.Age > oldPerson.Age)
-                {
-                    oldPerson = person;
-                }
-          
-            }
-            Console.WriteLine($"The old person is {oldPerson.Name} with an age of {oldPerson.Age}.");
+            //foreach (Person person in people)
+            //{
+            //    if (person.Age > oldPerson.Age)
+            //    {
+
+            //        oldPerson = person;
+            //    }
+
+            //}
+            //Console.WriteLine($"The old person is {oldPerson.Name} with an age of {oldPerson.Age}.");
             #endregion
+
+            #endregion
+
+
+            #region Part 02
+
+            #region Q1:
+
+            //Employee emp = new Employee
+            //{
+            //    Id = 1,
+            //    Name = "Ahmed",
+            //    Gender = Gender.M,
+            //    SecurityLevel = SecurityLevel.Developer,
+            //    Salary = 10000,
+            //    HireDate = new HiringDate { Day = 3, Month = 1, Year = 2020 }
+            //};
+            //Console.WriteLine(emp.ToString());
+            #endregion
+
+
+
+
+
+            #endregion
+
+
 
         }
 
-
-
     }
 }
+
+
+
+   
+
