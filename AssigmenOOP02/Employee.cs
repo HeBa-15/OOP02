@@ -15,6 +15,16 @@ namespace AssigmenOOP02
         public SecurityLevel SecurityLevel { get; set; }
         public decimal Salary { get; set; }
         public HiringDate HireDate { get; set; }
+
+        public Employee(int id, string name, Gender gender, SecurityLevel securityLevel, decimal salary, HiringDate hireDate)
+        {
+            Id = id;
+            Name = name;
+            Gender = gender;
+            SecurityLevel = securityLevel;
+            Salary = salary;
+            HireDate = hireDate;
+        }
         public override string ToString()
         {
             return $"ID: {Id}, Name: {Name}, Gender: {Gender}, Security Level: {SecurityLevel}, Salary: {Salary:C}, Hire Date: {HireDate}";

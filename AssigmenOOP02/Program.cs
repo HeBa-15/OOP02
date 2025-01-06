@@ -39,7 +39,7 @@ namespace AssigmenOOP02
     #region Q1
     public enum SecurityLevel
     {
-        Guest, Developer, Secretary, DBA
+        Guest, Developer, Secretary, DBA, securityOfficer
     }
     public enum Gender
     {
@@ -132,7 +132,7 @@ namespace AssigmenOOP02
 
             #region Part 02
 
-            #region Q1:
+            #region Q1,2:
 
             //Employee emp = new Employee
             //{
@@ -147,7 +147,24 @@ namespace AssigmenOOP02
             #endregion
 
 
+            #region Q3:
 
+            //Employee[] Emp = new Employee[3];
+            //Emp[0] = new Employee(1, "Mariam", Gender.F, SecurityLevel.DBA, 10000,
+            //new HiringDate { Day = 1, Month = 2, Year = 2018 });
+
+            //Emp[1] = new Employee(2, "Ali", Gender.M, SecurityLevel.Guest, 9000,
+            //    new HiringDate { Day = 15, Month = 6, Year = 2020 });
+
+            //Emp[2] = new Employee(3, "Charlie", Gender.M, SecurityLevel.securityOfficer, 11000,
+            //    new HiringDate { Day = 10, Month = 12, Year = 2019 });
+
+            //foreach (var emp in Emp)
+            //{ 
+            //    Console.WriteLine(emp.ToString());
+            //}
+
+            #endregion
 
 
             #endregion
